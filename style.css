@@ -3,11 +3,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom right, #473e93, #aa3e3e);
+    background: linear-gradient(to bottom right, #afe445, #cb8654);
     background-repeat: repeat;
+    padding: 10px;
+    height: 100vh;
+    width: auto;
 }
 
 h1 {
@@ -18,23 +20,50 @@ h1 {
 #board {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 02px;
+    grid-gap: 8px;
+    max-height: 600px;
+/* Defina um valor máximo para limitar a largura do grid */
+
+    height: 100%;
+    margin: 0 auto;
 }
 
 .card {
-    width: 80px;
-    height: 80px;
+    width: 140px;
+    height: 140px;
     background-color: #eee;
     border: 1px solid #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 40px;
+    font-size: 80px;
     border-radius: 10px;
     transition: transform 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    background-color: #31c524;
+}
+
+@media screen and (max-width: 480px) {
+    /* Estilos para telas menores que 480px de largura */
+    h1 {
+        font-size: 1.3rem;
+    }
+    
+    #board {
+    /* Defina um valor máximo para limitar a largura do grid */
+        max-width: 100%;
+        width: 100%;
+        grid-gap: 01px;
+        height: auto;
+    }
+    .card {
+        width: 4rem;
+        height: 4rem;
+        font-size: 3rem;
+    }
+    
 }
